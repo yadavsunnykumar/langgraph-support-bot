@@ -1,0 +1,12 @@
+2026-05-24 20:39:50.143 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-24 20:39:50.143 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-24 20:39:51.478 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'billing' (confidence=0.90) — The user is asking for assistance with a billing issue, specifically a duplicate charge, which is a common concern related to payments and invoices.
+2026-05-24 20:39:51.479 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-24 20:39:51.479 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-24 20:39:51.941 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'technical' (confidence=0.90) — The user mentions a specific issue with the app crashing, which is a technical problem.
+2026-05-24 20:39:51.941 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-24 20:39:51.941 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-24 20:39:52.606 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.90) — The user is asking for general information about the company, which is a common type of inquiry.
+2026-05-24 20:39:52.606 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-24 20:39:52.606 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-24 20:39:53.113 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.80) — The message is a greeting, which is a common type of general inquiry.
