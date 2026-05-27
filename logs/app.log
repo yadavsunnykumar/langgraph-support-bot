@@ -66,3 +66,137 @@
 2026-05-24 20:52:46.788 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.20) — The message contains random characters and a number, but does not match any specific keywords or patterns related to billing or technical issues.
 2026-05-24 20:52:46.788 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
 2026-05-24 20:52:46.789 | WARNING  | src.agents.escalation:human_escalation_node:15 - ⚠ Escalating to human — intent=general confidence=0.20
+2026-05-27 16:52:17.611 | INFO     | src.graph.builder:build_support_graph:30 - 🔧 Building support graph...
+2026-05-27 16:52:17.612 | INFO     | src.graph.builder:build_support_graph:67 - ✓ Support graph compiled successfully
+2026-05-27 16:52:17.613 | INFO     | src.services.conversation:send_message:36 - 💬 Thread 'memory-test-1': received message
+2026-05-27 16:52:17.615 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:52:17.615 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:52:19.213 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'billing' (confidence=0.80) — The user mentions being double-charged, which is a billing-related issue.
+2026-05-27 16:52:19.214 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: billing_agent
+2026-05-27 16:52:19.215 | INFO     | src.agents.billing:billing_agent_node:30 - → Entering billing_agent_node
+2026-05-27 16:52:19.215 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.3)
+2026-05-27 16:52:19.930 | INFO     | src.agents.billing:billing_agent_node:38 - ✓ Billing agent responded (198 chars)
+2026-05-27 16:52:19.934 | INFO     | src.services.conversation:send_message:36 - 💬 Thread 'memory-test-1': received message
+2026-05-27 16:52:19.938 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:52:19.939 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:52:20.477 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.80) — The user is asking a general question that is not related to billing or technical support, but rather a personal inquiry that is not relevant to the customer support context.
+2026-05-27 16:52:20.478 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: general_agent
+2026-05-27 16:52:20.479 | INFO     | src.agents.general:general_agent_node:33 - → Entering general_agent_node
+2026-05-27 16:52:20.479 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.5)
+2026-05-27 16:52:21.174 | INFO     | src.agents.general:general_agent_node:41 - ✓ General agent responded (100 chars)
+2026-05-27 16:52:21.177 | INFO     | src.services.conversation:send_message:36 - 💬 Thread 'different-thread': received message
+2026-05-27 16:52:21.180 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:52:21.180 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:52:21.763 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.80) — The user is asking a general question that is not related to billing or technical support, indicating a low likelihood of a billing or technical issue.
+2026-05-27 16:52:21.764 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: general_agent
+2026-05-27 16:52:21.765 | INFO     | src.agents.general:general_agent_node:33 - → Entering general_agent_node
+2026-05-27 16:52:21.765 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.5)
+2026-05-27 16:52:22.151 | INFO     | src.agents.general:general_agent_node:41 - ✓ General agent responded (100 chars)
+2026-05-27 16:54:58.916 | INFO     | src.graph.builder:build_support_graph:30 - 🔧 Building support graph...
+2026-05-27 16:54:58.917 | INFO     | src.graph.builder:build_support_graph:67 - ✓ Support graph compiled successfully
+2026-05-27 16:54:58.925 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:54:58.926 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:54:59.988 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'billing' (confidence=0.90) — The user's message mentions being charged twice, which is a clear indication of a billing issue.
+2026-05-27 16:54:59.990 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:54:59.990 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:00.464 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'billing' (confidence=0.90) — The user is requesting a refund, which is related to billing and payments.
+2026-05-27 16:55:00.467 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:00.467 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:01.132 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'billing' (confidence=0.80) — The user is complaining about an unexpected auto-renewal, which is related to billing.
+2026-05-27 16:55:01.134 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:01.135 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:01.950 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'technical' (confidence=0.90) — The user mentions an app crash, which is a common technical issue, indicating a high likelihood of a technical intent.
+2026-05-27 16:55:01.952 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:01.953 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:02.422 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'technical' (confidence=0.90) — The user is experiencing a technical issue with logging in and receiving a 500 error, which suggests a problem with the system or application.
+2026-05-27 16:55:02.424 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:02.424 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:02.839 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'technical' (confidence=0.90) — The user is asking for a specific feature-related action, indicating a technical query.
+2026-05-27 16:55:02.842 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:02.842 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:03.356 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.90) — The message is a greeting, which is a common type of general inquiry.
+2026-05-27 16:55:03.358 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:03.359 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:04.144 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.90) — The user is asking for general information about the company, which is a common type of inquiry.
+2026-05-27 16:55:04.146 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:04.146 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:05.090 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.00) — The message does not contain any keywords related to billing, technical issues, or general inquiries, indicating a low confidence in classification.
+2026-05-27 16:55:05.092 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:05.093 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:06.457 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.20) — The message contains random characters and a phone number, but no clear intent or question, so it's classified as general with low confidence.
+2026-05-27 16:55:06.460 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: billing_agent
+2026-05-27 16:55:06.461 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: technical_agent
+2026-05-27 16:55:06.462 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: general_agent
+2026-05-27 16:55:06.463 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
+2026-05-27 16:55:06.464 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
+2026-05-27 16:55:06.466 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
+2026-05-27 16:55:47.292 | INFO     | src.graph.builder:build_support_graph:30 - 🔧 Building support graph...
+2026-05-27 16:55:47.294 | INFO     | src.graph.builder:build_support_graph:67 - ✓ Support graph compiled successfully
+2026-05-27 16:55:47.301 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:47.302 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:47.868 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'billing' (confidence=0.90) — The user's message mentions being charged twice, which is a clear indication of a billing issue.
+2026-05-27 16:55:47.870 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:47.870 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:48.631 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'billing' (confidence=0.90) — The user is requesting a refund, which is related to billing and payments.
+2026-05-27 16:55:48.634 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:48.634 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:49.119 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'billing' (confidence=0.80) — The user is complaining about an unexpected auto-renewal, which is related to billing.
+2026-05-27 16:55:49.123 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:49.123 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:49.774 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'technical' (confidence=0.90) — The user mentions an app crash, which is a common technical issue, indicating a high likelihood of a technical intent.
+2026-05-27 16:55:49.777 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:49.777 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:50.366 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'technical' (confidence=0.90) — The user is experiencing a technical issue with logging in and receiving a 500 error, which suggests a problem with the system or application.
+2026-05-27 16:55:50.370 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:50.371 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:51.306 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'technical' (confidence=0.90) — The user is asking for a specific feature-related action, indicating a technical query.
+2026-05-27 16:55:51.307 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:51.307 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:52.527 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.90) — The message is a greeting, which is a common type of general inquiry.
+2026-05-27 16:55:52.530 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:52.530 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:53.972 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.90) — The user is asking for general information about the company, which is a common type of inquiry.
+2026-05-27 16:55:53.976 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:53.976 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:54.536 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.00) — The message does not contain any keywords related to billing, technical issues, or general inquiries, indicating a low confidence in classification.
+2026-05-27 16:55:54.539 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:54.539 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:55.396 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.20) — The message contains random characters and a phone number, but no clear intent or question, so it's classified as general with low confidence.
+2026-05-27 16:55:55.401 | INFO     | src.services.conversation:send_message:36 - 💬 Thread 'test-billing-1': received message
+2026-05-27 16:55:55.418 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:55.418 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:55.896 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'billing' (confidence=0.90) — The user is requesting a refund for a subscription charge, which is a clear billing-related issue.
+2026-05-27 16:55:55.897 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: billing_agent
+2026-05-27 16:55:55.898 | INFO     | src.agents.billing:billing_agent_node:30 - → Entering billing_agent_node
+2026-05-27 16:55:55.899 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.3)
+2026-05-27 16:55:56.532 | INFO     | src.agents.billing:billing_agent_node:38 - ✓ Billing agent responded (229 chars)
+2026-05-27 16:55:56.539 | INFO     | src.services.conversation:send_message:36 - 💬 Thread 'test-tech-1': received message
+2026-05-27 16:55:56.543 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:56.543 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:57.145 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'technical' (confidence=0.90) — The user mentions an app crash, which is a common technical issue, and specifically mentions the settings screen, indicating a problem with the app's functionality.
+2026-05-27 16:55:57.146 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: technical_agent
+2026-05-27 16:55:57.148 | INFO     | src.agents.technical:technical_agent_node:30 - → Entering technical_agent_node
+2026-05-27 16:55:57.148 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.2)
+2026-05-27 16:55:57.908 | INFO     | src.agents.technical:technical_agent_node:38 - ✓ Technical agent responded (775 chars)
+2026-05-27 16:55:57.912 | INFO     | src.services.conversation:send_message:36 - 💬 Thread 'test-memory-integration': received message
+2026-05-27 16:55:57.915 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:57.916 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:55:58.786 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.80) — The message is a greeting and includes a specific piece of information, but it doesn't contain any keywords related to billing or technical issues.
+2026-05-27 16:55:58.787 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: general_agent
+2026-05-27 16:55:58.789 | INFO     | src.agents.general:general_agent_node:33 - → Entering general_agent_node
+2026-05-27 16:55:58.790 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.5)
+2026-05-27 16:55:59.331 | INFO     | src.agents.general:general_agent_node:41 - ✓ General agent responded (284 chars)
+2026-05-27 16:55:59.334 | INFO     | src.services.conversation:send_message:36 - 💬 Thread 'test-memory-integration': received message
+2026-05-27 16:55:59.338 | INFO     | src.agents.classifier:classifier_node:52 - → Entering classifier_node
+2026-05-27 16:55:59.339 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 16:56:02.166 | INFO     | src.agents.classifier:classifier_node:67 - ✓ Classified as 'general' (confidence=0.80) — The user is asking a general question about their previous interaction, which is not related to billing or technical issues.
+2026-05-27 16:56:02.167 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: general_agent
+2026-05-27 16:56:02.169 | INFO     | src.agents.general:general_agent_node:33 - → Entering general_agent_node
+2026-05-27 16:56:02.169 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.5)
+2026-05-27 16:56:04.961 | INFO     | src.agents.general:general_agent_node:41 - ✓ General agent responded (135 chars)
+2026-05-27 16:56:04.968 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: billing_agent
+2026-05-27 16:56:04.970 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: technical_agent
+2026-05-27 16:56:04.971 | INFO     | src.graph.router:route_after_classification:33 - ⤴ Routing to: general_agent
+2026-05-27 16:56:04.973 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
+2026-05-27 16:56:04.975 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
+2026-05-27 16:56:04.976 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
