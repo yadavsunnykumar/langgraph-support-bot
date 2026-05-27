@@ -40,8 +40,7 @@ Provide:
 User message: "{user_message}"
 """
 
-# Confidence threshold — below this, escalate to human
-settings.confidence_threshold
+
 
 
 def classifier_node(state: SupportState) -> dict:
@@ -73,7 +72,7 @@ def classifier_node(state: SupportState) -> dict:
         return {
             "intent": result.intent,
             "confidence": result.confidence,
-            "requires_human": result.confidence < CONFIDENCE_THRESHOLD,
+            "requires_human": result.confidence < settings.confidence_threshold,
         }
     
     except Exception as e:
