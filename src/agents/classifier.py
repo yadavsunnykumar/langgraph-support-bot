@@ -7,6 +7,7 @@ from typing import Literal
 from src.core.llm import get_llm
 from src.core.logger import logger
 from src.graph.state import SupportState
+from src.core.config import settings
 
 
 class IntentClassification(BaseModel):
@@ -40,7 +41,7 @@ User message: "{user_message}"
 """
 
 # Confidence threshold — below this, escalate to human
-CONFIDENCE_THRESHOLD = 0.6
+settings.confidence_threshold
 
 
 def classifier_node(state: SupportState) -> dict:
