@@ -2,6 +2,7 @@
 
 install:
 	pip install -r requirements.txt
+	pip install -e .
 
 test:
 	pytest -v
@@ -10,7 +11,7 @@ test-fast:
 	pytest -v -m "not integration"
 
 run:
-	streamlit run src/ui/streamlit_app.py
+	PYTHONPATH=. streamlit run src/ui/streamlit_app.py
 
 clean:
 	find . -type d -name __pycache__ -exec rm -rf {} +
