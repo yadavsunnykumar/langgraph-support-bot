@@ -200,3 +200,24 @@
 2026-05-27 16:56:04.973 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
 2026-05-27 16:56:04.975 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
 2026-05-27 16:56:04.976 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
+2026-05-27 17:44:45.710 | INFO     | src.graph.builder:build_support_graph:30 - 🔧 Building support graph...
+2026-05-27 17:44:45.712 | INFO     | src.graph.builder:build_support_graph:67 - ✓ Support graph compiled successfully
+2026-05-27 17:44:54.871 | INFO     | src.graph.builder:build_support_graph:30 - 🔧 Building support graph...
+2026-05-27 17:44:54.872 | INFO     | src.graph.builder:build_support_graph:67 - ✓ Support graph compiled successfully
+2026-05-27 17:44:54.878 | INFO     | src.agents.classifier:classifier_node:53 - → Entering classifier_node
+2026-05-27 17:44:54.878 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 17:44:55.698 | INFO     | src.agents.classifier:classifier_node:68 - ✓ Classified as 'billing' (confidence=0.90) — The user's message mentions being charged twice, which is a clear indication of a billing issue.
+2026-05-27 17:44:55.698 | ERROR    | src.agents.classifier:classifier_node:80 - Classifier failed: name 'CONFIDENCE_THRESHOLD' is not defined
+2026-05-27 17:48:22.322 | INFO     | src.graph.builder:build_support_graph:30 - 🔧 Building support graph...
+2026-05-27 17:48:22.324 | INFO     | src.graph.builder:build_support_graph:67 - ✓ Support graph compiled successfully
+2026-05-27 17:48:22.863 | INFO     | src.graph.builder:build_support_graph:30 - 🔧 Building support graph...
+2026-05-27 17:48:22.864 | INFO     | src.graph.builder:build_support_graph:67 - ✓ Support graph compiled successfully
+2026-05-27 17:50:02.258 | INFO     | src.graph.builder:build_support_graph:30 - 🔧 Building support graph...
+2026-05-27 17:50:02.259 | INFO     | src.graph.builder:build_support_graph:67 - ✓ Support graph compiled successfully
+2026-05-27 17:51:29.751 | INFO     | src.services.conversation:send_message:36 - 💬 Thread 'streamlit-bab79cc3': received message
+2026-05-27 17:51:29.763 | INFO     | src.agents.classifier:classifier_node:53 - → Entering classifier_node
+2026-05-27 17:51:29.763 | DEBUG    | src.core.llm:get_llm:19 - Initializing LLM: llama-3.1-8b-instant (temp=0.0)
+2026-05-27 17:51:30.640 | INFO     | src.agents.classifier:classifier_node:68 - ✓ Classified as 'general' (confidence=0.80) — The message is a greeting, which is a common type of general inquiry.
+2026-05-27 17:51:30.640 | ERROR    | src.agents.classifier:classifier_node:80 - Classifier failed: name 'CONFIDENCE_THRESHOLD' is not defined
+2026-05-27 17:51:30.640 | INFO     | src.graph.router:route_after_classification:23 - ⤴ Routing to: human_escalation
+2026-05-27 17:51:30.641 | WARNING  | src.agents.escalation:human_escalation_node:15 - ⚠ Escalating to human — intent=unknown confidence=0.00
